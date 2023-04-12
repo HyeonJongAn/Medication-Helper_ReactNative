@@ -38,6 +38,22 @@ export default function Register({ navigation }: any) {
         <Input variant="underlined" placeholder="PW"></Input>
         <Text fontSize="xl">비밀번호 확인</Text>
         <Input variant="underlined" placeholder="PW 재입력"></Input>
+
+        <Text fontSize="xl">사용자 선택</Text>
+        <Radio.Group
+          name="GenderGroup"
+          defaultValue="1"
+          accessibilityLabel="Select Gender"
+        >
+          <HStack>
+            <Radio value="1" colorScheme="red" size="sm" my={1}>
+              일반
+            </Radio>
+            <Radio value="2" colorScheme="green" size="sm" my={1}>
+              관리자
+            </Radio>
+          </HStack>
+        </Radio.Group>
       </Box>
       <Box height="1"></Box>
       <Box
@@ -53,9 +69,9 @@ export default function Register({ navigation }: any) {
         <Input variant="underlined" placeholder="PW"></Input>
         <Text fontSize="xl">성별</Text>
         <Radio.Group
-          name="exampleGroup"
+          name="GenderGroup"
           defaultValue="1"
-          accessibilityLabel="pick a size"
+          accessibilityLabel="Select Gender"
         >
           <HStack>
             <Radio value="1" colorScheme="red" size="sm" my={1}>

@@ -9,28 +9,33 @@ import { TextInput } from "react-native";
   navigation을 사용하면, 네비게이션으로 지정된 여러가지 화면으로 이동 할 수 있다.
 */
 
-export default function Maiin({ navigation }: any) {
+export default function MedicRegister({ navigation }: any) {
   // navigation.navigate("스택 네이게이션 컴포넌트 name")을 사용해, 화면 이동
   return (
     <NativeBaseProvider>
-      <Box height="30"></Box>
-      <Box alignSelf="center" p="20">
-        <Text fontSize="2xl">Medication-Helper</Text>
-      </Box>
-      <Box width="200" alignSelf="center" borderColor="black" borderWidth="1" p="1">
-        <TextInput placeholder="ID"></TextInput>
+      <Box height="10"></Box>
+      <Box width="100%" alignSelf="center">
+        <Text alignSelf="center" fontSize="4xl">
+          약물 등록
+        </Text>
       </Box>
       <Box height="5"></Box>
-      <Box width="200" alignSelf="center" borderColor="black" borderWidth="1">
-        <TextInput placeholder="PW"></TextInput>
-      </Box>
-      <Box height="30"></Box>
+
+      <Box
+        width="70%"
+        alignSelf="center"
+        borderColor="black"
+        borderWidth="1"
+        p="2"
+        height="350"
+      ></Box>
+      <Box height="5"></Box>
       <Box width="200" alignSelf="center">
-        <Button>LogIn</Button>
+        <Button onPress={() => navigation.navigate("Welcome")}>사진촬영</Button>
       </Box>
       <Box height="1"></Box>
       <Box width="200" alignSelf="center">
-        <Button>LogIn</Button>
+        <Button onPress={() => navigation.navigate("Welcome")}>약물등록</Button>
       </Box>
     </NativeBaseProvider>
   );
