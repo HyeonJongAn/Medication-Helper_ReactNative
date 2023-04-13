@@ -58,9 +58,9 @@ export default function Mypage({ navigation }: any) {
         </HStack>
 
         <HStack>
-          <Text fontSize="xl">이름 : </Text>
+          <Text fontSize="xl">성별 : </Text>
           <Text bold italic fontSize="xl">
-            김철수
+            남성
           </Text>
         </HStack>
       </Box>

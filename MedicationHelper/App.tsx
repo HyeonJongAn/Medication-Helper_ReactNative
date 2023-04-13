@@ -6,14 +6,17 @@ import { NavigationContainer } from "@react-navigation/native"; // 전체 네비
 import { createStackNavigator } from "@react-navigation/stack"; // 스택 네비게이션 라이브러리 불러오기
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-// 각각 보여줄 화면들 불러오기
-import Welcome from "./screens/Welcome";
-import Register from "./screens/Register";
-import UserMain from "./screens/UserMain";
-import MyPage from "./screens/Mypage";
-import MedicRegister from "./screens/MedicRegister";
-import MedicineList from "./screens/MedicineList";
-import PregnantFobid from "./screens/PregnantFobid";
+//보여줄 화면들 불러오기
+import Welcome from "./screens/All/Welcome";
+import Register from "./screens/All/Register";
+import UserMain from "./screens/User/UserMain";
+import UserPage from "./screens/User/Userpage";
+import MedicRegister from "./screens/User/MedicRegister";
+import MedicineList from "./screens/User/MedicineList";
+import PregnantForbid from "./screens/User/PregnantForbid";
+import DuplicateForbid from "./screens/User/DuplicateForbid";
+import SameEffect from "./screens/User/SameEffect";
+import MedicinDetail from "./screens/User/MedicineDetail";
 
 // 스택 네비게이션 만들기
 const Stack = createStackNavigator();
@@ -41,11 +44,21 @@ export default function App() {
               <Tab.Screen name="UserMain" component={UserMain} />
               <Tab.Screen name="MedicRegister" component={MedicRegister} />
               <Tab.Screen name="MedicineList" component={MedicineList} />
-              <Tab.Screen name="Mypage" component={MyPage} />
+              <Tab.Screen name="Mypage" component={UserPage} />
             </Tab.Navigator>
           )}
         </Stack.Screen>
-        <Stack.Screen name="PregnantFobid" component={PregnantFobid}/>
+        <Stack.Screen name="MedicineDetail" component={MedicinDetail} />
+        <Stack.Screen name="PregnantFobid" component={PregnantForbid} />
+        <Stack.Screen name="DuplicateForbid" component={DuplicateForbid} />
+        <Stack.Screen name="SameEffect" component={SameEffect} />
+        <Stack.Screen name="ManagerMain">
+          {()=>(
+            <Tab.Navigator screenOptions={{headerShown:false}}>
+
+            </Tab.Navigator>
+          )}
+        </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );

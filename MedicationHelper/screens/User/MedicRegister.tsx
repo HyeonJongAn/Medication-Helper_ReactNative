@@ -1,4 +1,4 @@
-//.tsx
+//MedicRegister.tsx
 
 import React from "react";
 import { NativeBaseProvider, Text, Box, Input, Button } from "native-base";
@@ -9,28 +9,33 @@ import { TextInput } from "react-native";
   navigation을 사용하면, 네비게이션으로 지정된 여러가지 화면으로 이동 할 수 있다.
 */
 
-export default function LoginProcess({ navigation }: any) {
+export default function MedicRegister({ navigation }: any) {
   // navigation.navigate("스택 네이게이션 컴포넌트 name")을 사용해, 화면 이동
   return (
     <NativeBaseProvider>
-      <Box height="50"></Box>
+      <Box height="10"></Box>
       <Box width="100%" alignSelf="center">
         <Text alignSelf="center" fontSize="4xl">
-          Medication-Helper
+          약물 등록
         </Text>
       </Box>
-      <Box height="50"></Box>
+      <Box height="5"></Box>
 
       <Box
-        width="80%"
+        width="70%"
         alignSelf="center"
         borderColor="black"
         borderWidth="1"
         p="2"
-      >
-        <Text fontSize="xl">로그인 중</Text>
-        <Text></Text>
-        <Text fontSize="3xl">OOO</Text>
+        height="350"
+      ></Box>
+      <Box height="5"></Box>
+      <Box width="200" alignSelf="center">
+        <Button>사진촬영</Button>
+      </Box>
+      <Box height="1"></Box>
+      <Box width="200" alignSelf="center">
+        <Button>약물등록</Button>
       </Box>
     </NativeBaseProvider>
   );
