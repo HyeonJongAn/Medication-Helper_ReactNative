@@ -1,12 +1,16 @@
-import { Medicine } from "./Medicine";
+import { Forbidden } from "./Forbidden";
 //import { View,Text,StyleSheet } from 'react-native';
 import { Box, Text } from "native-base";
 import { View, StyleSheet } from "react-native";
 
-export default function MedicineCell({ item }: { item: Medicine }) {
+export default function ForbiddenCell({ item }: { item: Forbidden }) {
   return (
     <View style={styles.container}>
       <Text color="white">{item.ITEM_NAME}</Text>
+      <Text color="white">{item.ClASS_NAME}</Text>
+      <Text color="white">{item.ENTP_NAME}</Text>
+      <Text color="white">{item.ING_KOR}</Text>
+      <Text color="white">{item.PROHBT_CONTENT}</Text>
     </View>
   );
 }
@@ -20,19 +24,5 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     color: "white",
     backgroundColor: "rgba(50,50,50,1)",
-  },
-  name: {
-    color: "white",
-    fontSize: 15,
-    fontWeight: "bold",
-    marginBottom: 5,
-  },
-  gender: {
-    color: "white",
-    fontSize: 15,
-  },
-  age: {
-    color: "white",
-    fontSize: 15,
   },
 });

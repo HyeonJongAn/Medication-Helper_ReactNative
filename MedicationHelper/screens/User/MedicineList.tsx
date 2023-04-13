@@ -49,28 +49,29 @@ export default function MedicineList({ navigation }: any) {
         alignSelf="center"
         borderColor="black"
         borderWidth="1"
-        p="2"
         height="400"
       >
-        <FlatList
-          data={MedicineData as Array<Medicine>}
-          renderItem={({ item }: { item: Medicine }) => {
-            return (
-              <Pressable
-                onPress={() =>
-                  navigation.navigate("MedicineDetail", {
-                    ITEM_NAME: item.ITEM_NAME,
-                    ITEM_IMAGE: item.ITEM_IMAGE,
-                    ENTP_NAME: item.ENTP_NAME,
-                  })
-                }
-              >
-                <MedicineCell item={item}></MedicineCell>
-              </Pressable>
-            );
-          }}
-          keyExtractor={(item) => item.ITEM_NAME}
-        />
+        <View style={styles.container}>
+          <FlatList
+            data={MedicineData as Array<Medicine>}
+            renderItem={({ item }: { item: Medicine }) => {
+              return (
+                <Pressable
+                  onPress={() =>
+                    navigation.navigate("MedicineDetail", {
+                      ITEM_NAME: item.ITEM_NAME,
+                      ITEM_IMAGE: item.ITEM_IMAGE,
+                      ENTP_NAME: item.ENTP_NAME,
+                    })
+                  }
+                >
+                  <MedicineCell item={item}></MedicineCell>
+                </Pressable>
+              );
+            }}
+            keyExtractor={(item) => item.ITEM_NAME}
+          />
+        </View>
       </Box>
       <Box height="5"></Box>
       <Box width="300" alignSelf="center">
@@ -93,3 +94,17 @@ export default function MedicineList({ navigation }: any) {
     </NativeBaseProvider>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 20,
+    flex: 1,
+    backgroundColor: "rgba(50,50,50,1)",
+  },
+  header: {
+    fontSize: 20,
+    marginBottom: 20,
+    fontWeight: "bold",
+    color: "white",
+  },
+});

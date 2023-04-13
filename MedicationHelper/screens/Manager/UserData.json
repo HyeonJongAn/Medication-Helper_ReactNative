@@ -1,0 +1,17 @@
+[
+  {
+    "ID": "AAA",
+    "PW": "BBB",
+    "USER_NAME": "김철수"
+  },
+  {
+    "ID": "CCC",
+    "PW": "DDD",
+    "USER_NAME": "이영희"
+  },
+  {
+    "ID": "EEE",
+    "PW": "FFF",
+    "USER_NAME": "강희라"
+  }
+]

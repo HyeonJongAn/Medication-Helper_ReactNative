@@ -1,0 +1,23 @@
+[
+  {
+    "ITEM_NAME": "카나보센정62.5밀리그램(보센탄수화물(미분화))",
+    "ENTP_NAME": "일동제약(주)",
+    "ClASS_NAME": "혈압강하제",
+    "ING_KOR": "보센탄",
+    "PROHBT_CONTENT": "보센탄의 혈중농도 증가"
+  },
+  {
+    "ITEM_NAME": "네오티가손캡슐10밀리그램(아시트레틴)",
+    "ENTP_NAME": "(주)종근당",
+    "ClASS_NAME": "비타민 A 및 D제",
+    "ING_KOR": "아시트레틴",
+    "PROHBT_CONTENT": "두개내압 증가"
+  },
+  {
+    "ITEM_NAME": "심바롤정(심바스타틴)",
+    "ENTP_NAME": "일동제약(주)",
+    "ClASS_NAME": "동맥경화용제",
+    "ING_KOR": "심바스타틴",
+    "PROHBT_CONTENT": "혈중농도 상승 및 근육병증/횡문근융해증 위험성 증가"
+  }
+]

@@ -52,13 +52,13 @@ export default function App() {
         <Stack.Screen name="PregnantFobid" component={PregnantForbid} />
         <Stack.Screen name="DuplicateForbid" component={DuplicateForbid} />
         <Stack.Screen name="SameEffect" component={SameEffect} />
-        <Stack.Screen name="ManagerMain">
+        {/* <Stack.Screen name="ManagerMain">
           {()=>(
             <Tab.Navigator screenOptions={{headerShown:false}}>
 
             </Tab.Navigator>
           )}
-        </Stack.Screen>
+        </Stack.Screen> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -3,6 +3,12 @@
 import React from "react";
 import { NativeBaseProvider, Text, Box, Input, Button } from "native-base";
 import { FlatList } from "react-native";
+import { View, StyleSheet } from "react-native";
+
+import DuplicateData from "./DuplicateData.json";
+import { Forbidden } from "./Forbidden";
+import ForbiddenCell from "./ForbiddenCell";
+import DuplicateForbid from "./DuplicateForbid";
 
 const data = [];
 
@@ -23,9 +29,30 @@ export default function DuplicateFobid({ navigation }: any) {
         alignSelf="center"
         borderColor="black"
         borderWidth="1"
-        p="2"
-        height="400"
-      ></Box>
+        height="80%"
+      >
+        <View style={styles.container}>
+          <FlatList
+            data={DuplicateData as Forbidden[]}
+            renderItem={ForbiddenCell}
+            keyExtractor={(item) => item.ITEM_NAME}
+          />
+        </View>
+      </Box>
     </NativeBaseProvider>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 20,
+    flex: 1,
+    backgroundColor: "rgba(50,50,50,1)",
+  },
+  header: {
+    fontSize: 20,
+    marginBottom: 20,
+    fontWeight: "bold",
+    color: "white",
+  },
+});
