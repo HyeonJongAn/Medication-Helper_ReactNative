@@ -28,12 +28,6 @@ export default function Mypage({ navigation }: any) {
       </Box>
       <Box height="5"></Box>
 
-      <Box width="80%" alignSelf="center">
-        <Text bold italic fontSize="2xl">
-          일반 사용자
-        </Text>
-      </Box>
-
       <Box
         width="80%"
         alignSelf="center"
@@ -41,7 +35,7 @@ export default function Mypage({ navigation }: any) {
         borderWidth="1"
         p="2"
       >
-        <Text fontSize="2xl">회원정보</Text>
+        <Text fontSize="2xl">사용자 정보</Text>
 
         <HStack>
           <Text fontSize="xl">이름 : </Text>

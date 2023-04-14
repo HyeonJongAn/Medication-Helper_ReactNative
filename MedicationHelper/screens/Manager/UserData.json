@@ -1,17 +1,20 @@
 [
   {
+    "USER_NAME": "김철수",
     "ID": "AAA",
-    "PW": "BBB",
-    "USER_NAME": "김철수"
+    "BIRTH": "1998.12.10",
+    "GENDER": "남성"
   },
   {
+    "USER_NAME": "이영희",
     "ID": "CCC",
-    "PW": "DDD",
-    "USER_NAME": "이영희"
+    "BIRTH": "2000.10.08",
+    "GENDER": "여성"
   },
   {
-    "ID": "EEE",
-    "PW": "FFF",
-    "USER_NAME": "강희라"
+    "USER_NAME": "강희라",
+    "ID": "FEE",
+    "BIRTH": "1988.05.22",
+    "GENDER": "여성"
   }
 ]

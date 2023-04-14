@@ -6,11 +6,13 @@ import { NavigationContainer } from "@react-navigation/native"; // 전체 네비
 import { createStackNavigator } from "@react-navigation/stack"; // 스택 네비게이션 라이브러리 불러오기
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-//보여줄 화면들 불러오기
+//공용 화면
 import Welcome from "./screens/All/Welcome";
 import Register from "./screens/All/Register";
+import MyPage from "./screens/All/Mypage";
+
+//일반사용자 화면
 import UserMain from "./screens/User/UserMain";
-import UserPage from "./screens/User/Userpage";
 import MedicRegister from "./screens/User/MedicRegister";
 import MedicineList from "./screens/User/MedicineList";
 import PregnantForbid from "./screens/User/PregnantForbid";
@@ -18,10 +20,16 @@ import DuplicateForbid from "./screens/User/DuplicateForbid";
 import SameEffect from "./screens/User/SameEffect";
 import MedicinDetail from "./screens/User/MedicineDetail";
 
+//관리자 화면
+import ManagerMain from "./screens/Manager/ManagerMain";
+import UserList from "./screens/Manager/UserList";
+import Statics from "./screens/Manager/Statics";
+
 // 스택 네비게이션 만들기
 const Stack = createStackNavigator();
 
 const Tab = createBottomTabNavigator();
+const Tab2 = createBottomTabNavigator();
 
 LogBox.ignoreAllLogs();
 
@@ -38,27 +46,32 @@ export default function App() {
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="Register" component={Register} />
+
         <Stack.Screen name="UserMain">
           {() => (
             <Tab.Navigator screenOptions={{ headerShown: false }}>
               <Tab.Screen name="UserMain" component={UserMain} />
               <Tab.Screen name="MedicRegister" component={MedicRegister} />
               <Tab.Screen name="MedicineList" component={MedicineList} />
-              <Tab.Screen name="Mypage" component={UserPage} />
+              <Tab.Screen name="Mypage" component={MyPage} />
             </Tab.Navigator>
           )}
         </Stack.Screen>
         <Stack.Screen name="MedicineDetail" component={MedicinDetail} />
-        <Stack.Screen name="PregnantFobid" component={PregnantForbid} />
+        <Stack.Screen name="PregnantForbid" component={PregnantForbid} />
         <Stack.Screen name="DuplicateForbid" component={DuplicateForbid} />
         <Stack.Screen name="SameEffect" component={SameEffect} />
-        {/* <Stack.Screen name="ManagerMain">
-          {()=>(
-            <Tab.Navigator screenOptions={{headerShown:false}}>
 
-            </Tab.Navigator>
+        <Stack.Screen name="ManagerMain">
+          {() => (
+            <Tab2.Navigator screenOptions={{ headerShown: false }}>
+              <Tab2.Screen name="MannagerMain" component={ManagerMain} />
+              <Tab2.Screen name="UserList" component={UserList} />
+              <Tab2.Screen name="Statics" component={Statics} />
+              <Tab2.Screen name="ManagerPage" component={MyPage} />
+            </Tab2.Navigator>
           )}
-        </Stack.Screen> */}
+        </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );

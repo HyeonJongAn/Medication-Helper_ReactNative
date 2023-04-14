@@ -1,24 +1,26 @@
-//DuplicateForbid.tsx
+//UserList.tsx
 
 import React from "react";
 import { NativeBaseProvider, Text, Box, Input, Button } from "native-base";
+import { StyleSheet, View } from "react-native";
 import { FlatList } from "react-native";
-import { View, StyleSheet } from "react-native";
 
-import DuplicateData from "./DuplicateData.json";
-import { Forbidden } from "./Forbidden";
-import ForbiddenCell from "./ForbiddenCell";
+import UserData from "./UserData.json";
+import { Person } from "./Person";
+import PersonCell from "./Personcell";
+/*
+  스택 네이게이션으로 지정된 컴포넌트는, 여러가지 요소(props)가 주어지는데,
+  navigation을 사용하면, 네비게이션으로 지정된 여러가지 화면으로 이동 할 수 있다.
+*/
 
-const data = [];
-
-export default function DuplicateFobid({ navigation }: any) {
+export default function UserList({ navigation }: any) {
   // navigation.navigate("스택 네이게이션 컴포넌트 name")을 사용해, 화면 이동
   return (
     <NativeBaseProvider>
       <Box height="10"></Box>
       <Box width="100%" alignSelf="center">
         <Text alignSelf="center" fontSize="4xl">
-          병용금기
+          사용자목록
         </Text>
       </Box>
       <Box height="5"></Box>
@@ -32,9 +34,9 @@ export default function DuplicateFobid({ navigation }: any) {
       >
         <View style={styles.container}>
           <FlatList
-            data={DuplicateData as Forbidden[]}
-            renderItem={ForbiddenCell}
-            keyExtractor={(item) => item.ITEM_NAME}
+            data={UserData as Person[]}
+            renderItem={PersonCell}
+            keyExtractor={(item) => item.ID}
           />
         </View>
       </Box>

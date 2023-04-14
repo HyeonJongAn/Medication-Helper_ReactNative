@@ -1,11 +1,14 @@
-import { Medicine } from "./Medicine";
+import { Person } from "./Person";
 import { Box, Text } from "native-base";
 import { View, StyleSheet } from "react-native";
 
-export default function MedicineCell({ item }: { item: Medicine }) {
+export default function PersonCell({ item }: { item: Person }) {
   return (
     <View style={styles.container}>
-      <Text color="white">{item.ITEM_NAME}</Text>
+      <Text color="white">{item.ID}</Text>
+      <Text color="white">{item.USER_NAME}</Text>
+      <Text color="white">{item.BIRTH}</Text>
+      <Text color="white">{item.GENDER}</Text>
     </View>
   );
 }
@@ -19,19 +22,5 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     color: "white",
     backgroundColor: "rgba(50,50,50,1)",
-  },
-  name: {
-    color: "white",
-    fontSize: 15,
-    fontWeight: "bold",
-    marginBottom: 5,
-  },
-  gender: {
-    color: "white",
-    fontSize: 15,
-  },
-  age: {
-    color: "white",
-    fontSize: 15,
   },
 });

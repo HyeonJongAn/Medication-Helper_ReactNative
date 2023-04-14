@@ -48,7 +48,12 @@ export default function Welcome({ navigation }: any) {
       </Box>
       <Box height="30"></Box>
       <Box width="200" alignSelf="center">
-        <Button onPress={() => navigation.navigate("UserMain")}>LogIn</Button>
+        <Button onPress={() => navigation.navigate("UserMain")}>
+          UserLogIn
+        </Button>
+        <Button onPress={() => navigation.navigate("ManagerMain")}>
+          ManagerLogIn
+        </Button>
       </Box>
       <Box height="1"></Box>
       <Box width="200" alignSelf="center">

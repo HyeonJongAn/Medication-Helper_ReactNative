@@ -1,5 +1,4 @@
 import { Forbidden } from "./Forbidden";
-//import { View,Text,StyleSheet } from 'react-native';
 import { Box, Text } from "native-base";
 import { View, StyleSheet } from "react-native";
 
