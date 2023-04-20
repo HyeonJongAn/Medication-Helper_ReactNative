@@ -12,7 +12,7 @@ import ForbiddenCell from "./ForbiddenCell";
 const data = [];
 
 export default function DuplicateFobid({ navigation }: any) {
-  // navigation.navigate("스택 네이게이션 컴포넌트 name")을 사용해, 화면 이동
+  // navigation.navigate("스택 네비게이션 컴포넌트 name")을 사용해, 화면 이동
   return (
     <NativeBaseProvider>
       <Box height="10"></Box>

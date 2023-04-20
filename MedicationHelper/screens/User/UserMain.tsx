@@ -39,7 +39,7 @@ export default function UserMain({ navigation }: any) {
         p="2"
         height="400"
       >
-        <Text>주변 병원 위치</Text>
+        <Text>사용자 주변 병원 & 약국</Text>
 
         <Image
           style={styles.image}
