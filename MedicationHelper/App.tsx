@@ -51,7 +51,11 @@ export default function App() {
           {() => (
             <Tab.Navigator screenOptions={{ headerShown: false }}>
               <Tab.Screen name="UserMain" component={UserMain} />
-              <Tab.Screen name="MedicRegister" component={MedicRegister} />
+              <Tab.Screen
+                name="MedicRegister"
+                component={MedicRegister}
+                options={{ unmountOnBlur: true }}
+              />
               <Tab.Screen name="MedicineList" component={MedicineList} />
               <Tab.Screen name="Mypage" component={MyPage} />
             </Tab.Navigator>
