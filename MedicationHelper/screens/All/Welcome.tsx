@@ -18,6 +18,7 @@ import { TextInput } from "react-native";
 
 export default function Welcome({ navigation }: any) {
   // navigation.navigate("스택 네이게이션 컴포넌트 name")을 사용해, 화면 이동
+
   return (
     <NativeBaseProvider>
       <Box height="100"></Box>
@@ -49,10 +50,10 @@ export default function Welcome({ navigation }: any) {
       <Box height="30"></Box>
       <Box width="200" alignSelf="center">
         <Button onPress={() => navigation.navigate("UserMain")}>
-          UserLogIn
+          UserLogin
         </Button>
         <Button onPress={() => navigation.navigate("ManagerMain")}>
-          ManagerLogIn
+          ManagerLogin
         </Button>
       </Box>
       <Box height="1"></Box>
