@@ -5,19 +5,29 @@ import {
   NativeBaseProvider,
   Text,
   Box,
-  Input,
   Button,
   HStack,
 } from "native-base";
-import { TextInput } from "react-native";
+import { Alert } from "react-native";
+import firebase from "../../firebase";
+import { currentUser } from "../../user";
 
-/*
-  스택 네이게이션으로 지정된 컴포넌트는, 여러가지 요소(props)가 주어지는데,
-  navigation을 사용하면, 네비게이션으로 지정된 여러가지 화면으로 이동 할 수 있다.
-*/
+const database = firebase.database();
 
 export default function Mypage({ navigation }: any) {
-  // navigation.navigate("스택 네이게이션 컴포넌트 name")을 사용해, 화면 이동
+  const logout = () => {
+    currentUser.init();
+    Alert.alert('알림', '로그아웃 되었습니다.');
+    navigation.navigate("Welcome");
+  };
+
+  const Withdrawal = () => {
+    database.ref('User/' + currentUser.uID).remove();
+    currentUser.init();
+    Alert.alert('알람', '회원탈퇴 되었습니다.');
+    navigation.navigate("Welcome");
+  };
+
   return (
     <NativeBaseProvider>
       <Box height="10"></Box>
@@ -40,33 +50,36 @@ export default function Mypage({ navigation }: any) {
         <HStack>
           <Text fontSize="xl">이름 : </Text>
           <Text bold italic fontSize="xl">
-            김철수
+            {currentUser.uName}
           </Text>
         </HStack>
 
         <HStack>
           <Text fontSize="xl">생년월일 : </Text>
           <Text bold italic fontSize="xl">
-            1998/03/28
+            {currentUser.birthDate}
           </Text>
         </HStack>
 
         <HStack>
           <Text fontSize="xl">성별 : </Text>
           <Text bold italic fontSize="xl">
-            남성
+            {currentUser.uGender}
           </Text>
         </HStack>
       </Box>
       <Box height="50"></Box>
       <Box width="200" alignSelf="center">
-        <Button onPress={() => navigation.navigate("Welcome")}>로그아웃</Button>
+        <Button onPress={() => navigation.navigate("Modify")}>회원정보 수정</Button>
+      </Box>
+      <Box height="50"></Box>
+      <Box width="200" alignSelf="center">
+        <Button onPress={logout}>로그아웃</Button>
       </Box>
       <Box height="1"></Box>
       <Box width="200" alignSelf="center">
-        <Button onPress={() => navigation.navigate("Welcome")}>회원탈퇴</Button>
+        <Button onPress={Withdrawal}>회원탈퇴</Button>
       </Box>
     </NativeBaseProvider>
   );
 }
-2;

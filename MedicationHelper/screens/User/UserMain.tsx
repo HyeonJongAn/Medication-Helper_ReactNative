@@ -5,6 +5,8 @@ import { NativeBaseProvider, Text, Box, Input, Button } from "native-base";
 import { TextInput } from "react-native";
 import { Image } from "expo-image";
 import { StyleSheet, View } from "react-native";
+import { currentUser } from "../../user";
+
 /*
   스택 네이게이션으로 지정된 컴포넌트는, 여러가지 요소(props)가 주어지는데,
   navigation을 사용하면, 네비게이션으로 지정된 여러가지 화면으로 이동 할 수 있다.
@@ -14,6 +16,7 @@ const blurhash =
 
 export default function UserMain({ navigation }: any) {
   // navigation.navigate("스택 네이게이션 컴포넌트 name")을 사용해, 화면 이동
+
   return (
     <NativeBaseProvider>
       <Box height="30"></Box>
@@ -27,7 +30,7 @@ export default function UserMain({ navigation }: any) {
       >
         <Text fontSize="xl">반갑습니다!</Text>
         <Text></Text>
-        <Text fontSize="3xl">접속 중 : 김철수</Text>
+        <Text fontSize="3xl">접속 중 : {currentUser.uName}</Text>
       </Box>
       <Box height="5" />
 

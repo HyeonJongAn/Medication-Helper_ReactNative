@@ -10,6 +10,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Welcome from "./screens/All/Welcome";
 import Register from "./screens/All/Register";
 import MyPage from "./screens/All/Mypage";
+import Modify from "./screens/All/Modify";
 
 //일반사용자 화면
 import UserMain from "./screens/User/UserMain";
@@ -46,6 +47,7 @@ export default function App() {
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="Register" component={Register} />
+        <Stack.Screen name="Modify" component={Modify}/>
 
         <Stack.Screen name="UserMain">
           {() => (
