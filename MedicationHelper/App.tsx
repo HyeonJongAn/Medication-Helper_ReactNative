@@ -63,10 +63,6 @@ export default function App() {
             </Tab.Navigator>
           )}
         </Stack.Screen>
-        <Stack.Screen name="MedicineDetail" component={MedicinDetail} />
-        <Stack.Screen name="PregnantForbid" component={PregnantForbid} />
-        <Stack.Screen name="DuplicateForbid" component={DuplicateForbid} />
-        <Stack.Screen name="SameEffect" component={SameEffect} />
 
         <Stack.Screen name="ManagerMain">
           {() => (
@@ -78,6 +74,11 @@ export default function App() {
             </Tab2.Navigator>
           )}
         </Stack.Screen>
+        
+        <Stack.Screen name="MedicineDetail" component={MedicinDetail} />
+        <Stack.Screen name="PregnantForbid" component={PregnantForbid} />
+        <Stack.Screen name="DuplicateForbid" component={DuplicateForbid} />
+        <Stack.Screen name="SameEffect" component={SameEffect} />
       </Stack.Navigator>
     </NavigationContainer>
   );

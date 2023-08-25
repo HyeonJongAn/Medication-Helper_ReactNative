@@ -5,10 +5,10 @@ import { View, StyleSheet } from "react-native";
 export default function PersonCell({ item }: { item: Person }) {
   return (
     <View style={styles.container}>
-      <Text color="white">{item.ID}</Text>
-      <Text color="white">{item.USER_NAME}</Text>
-      <Text color="white">{item.BIRTH}</Text>
-      <Text color="white">{item.GENDER}</Text>
+      <Text color="white">{item.uID}</Text>
+      <Text color="white">{item.uName}</Text>
+      <Text color="white">{item.birthDate}</Text>
+      <Text color="white">{item.uGender}</Text>
     </View>
   );
 }

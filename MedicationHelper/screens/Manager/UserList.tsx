@@ -1,20 +1,40 @@
 //UserList.tsx
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NativeBaseProvider, Text, Box, Input, Button } from "native-base";
 import { StyleSheet, View } from "react-native";
 import { FlatList } from "react-native";
 
-import UserData from "./UserData.json";
 import { Person } from "./Person";
 import PersonCell from "./Personcell";
-/*
-  스택 네이게이션으로 지정된 컴포넌트는, 여러가지 요소(props)가 주어지는데,
-  navigation을 사용하면, 네비게이션으로 지정된 여러가지 화면으로 이동 할 수 있다.
-*/
+
+import firebase from "../../firebase";
+
+const database = firebase.database();
 
 export default function UserList({ navigation }: any) {
-  // navigation.navigate("스택 네이게이션 컴포넌트 name")을 사용해, 화면 이동
+  const [userData, setUserData] = useState<Person[]>([]);
+
+  const handleAddUser = (uID: string, uName: string, birthDate: string, uGender: string) => {
+    const newUser: Person = {uID, uName, birthDate, uGender};
+    setUserData(prevUserData => [...prevUserData, newUser]);
+  };
+
+  useEffect(() => {
+    const dbRef = database.ref();
+
+    dbRef.once('value', (snapshot) => {
+      const jsonDBData = snapshot.val();
+      const users = jsonDBData.User;
+      const keys = Object.keys(users);
+  
+      for (const key of keys) {
+        const user = users[key];
+        handleAddUser(key, user.uName, user.birthDate, user.uGender);
+      }
+    });
+  }, []);
+
   return (
     <NativeBaseProvider>
       <Box height="10"></Box>
@@ -34,9 +54,9 @@ export default function UserList({ navigation }: any) {
       >
         <View style={styles.container}>
           <FlatList
-            data={UserData as Person[]}
+            data={userData as Person[]}
             renderItem={PersonCell}
-            keyExtractor={(item) => item.ID}
+            keyExtractor={(item) => item.uID}
           />
         </View>
       </Box>
